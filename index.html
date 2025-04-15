@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KAPIL SAINI| Portfolio</title>
+  <style>
+  .upload-container {
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .upload-container label {
+    display: block;
+    cursor: pointer;
+  }
+
+  .upload-container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px dashed #ccc;
+    transition: 0.3s ease;
+  }
+
+  .upload-container img:hover {
+    opacity: 0.8;
+    border-color: #999;
+  }
+
+  .upload-container input[type="file"] {
+    display: none;
+  }
+<style>
+  @keyframes bounce {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+
+  .upload-container img:hover {
+    animation: bounce 0.6s ease infinite;
+  }
+</style>
+
+
+  <style>
+    :root {
+      --primary: #6366f1;
+      --bg: #0f172a;
+      --bg-light: #1e293b;
+      --text: #e2e8f0;
+      --accent: #94a3b8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(to right, #1e293b, #0f172a);
+    }
+
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: var(--bg-light);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    section {
+      padding: 4rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-left: 5px solid var(--primary);
+      padding-left: 0.5rem;
+    }
+
+    .about p {
+      color: var(--accent);
+      margin-top: 1rem;
+    }
+
+    .skills {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .skill {
+      background: var(--bg-light);
+      padding: 1rem;
+      border-radius: 0.5rem;
+    }
+
+    .skill-name {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar {
+      background: #334155;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 12px;
+      background: var(--primary);
+      border-radius: 1rem;
+      width: 0;
+      transition: width 2s ease-in-out;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .project {
+      background: var(--bg-light);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: scale(1.05);
+    }
+
+    .project h3 {
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    .project p {
+      color: var(--accent);
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    input, textarea {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 0.5rem;
+      background: #1e293b;
+      color: white;
+      font-size: 1rem;
+    }
+
+    button {
+      background: var(--primary);
+      border: none;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #818cf8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: var(--accent);
+      background: var(--bg-light);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+     <a href="#certification">Certification</a>
+     <a href="#hobbies">Hobbies</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+   <div class="upload-container">
+  <label for="profileUpload">
+    <img src="https://via.placeholder.com/200x200.png?text=Upload+Photo" alt="Profile Photo" id="profilePreview">
+  </label>
+  <input type="file" id="profileUpload" accept="image/*" onchange="loadProfileImage(event)">
+</div>
+
+<h1>Kapil Saini</h1>
+<h2 style="color:#0077b6; font-weight:normal;">Turning Clicks Into Conversions 💡 | Digital Marketing Intern</h2>
+
+<p>Helping brands grow online through data-driven strategies & compelling content.</p>
+
+    <div class="social">
+      <div class="social">
+  <a href="https://github.com/yourusername" target="_blank">🐙 GitHub</a>
+ <a href="https://www.linkedin.com/in/kapil-saini-1303632b9" target="_blank">LinkedIn</a>
+<a href="mailto:sainirkapil94@email.com">✉️ Email</a>
+</div>
+
+    </div>
+  </header>
+
+  <section id="about" class="about">
+    <h2>🧠 About Me</h2>
+  <p>
+    I'm a passionate and results-driven <strong>Digital Marketing Intern</strong> with hands-on experience in SEO, content creation, social media strategy, and analytics. I thrive on helping brands grow their online presence and connect with their audience in meaningful ways.
+  </p>
+  <p>
+    During my recent internship, I collaborated with marketing teams to craft engaging campaigns, optimize web content for search engines, and analyze key performance indicators using Google Analytics and social insights. I’m deeply familiar with tools like Canva, Meta Ads, and Mailchimp, and I have a strong grasp of digital trends.
+  </p>
+  <p>
+    My goal is to continue learning, adapting, and contributing to dynamic marketing teams where creativity meets strategy. I bring enthusiasm, a strong work ethic, and a passion for connecting people through impactful digital storytelling.
+  </p>
+</section>
+
+    <p>
+  </section>
+
+   <section id="skills">
+     <h2>📊 Skills</h2>
+  <div class="skills">
+    <div class="skill">
+      <div class="skill-name">Search Engine Optimization (SEO)</div>
+      <div class="bar"><div class="bar-fill" style="width: 90%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Content Marketing</div>
+      <div class="bar"><div class="bar-fill" style="width: 85%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Social Media Marketing</div>
+      <div class="bar"><div class="bar-fill" style="width: 88%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Google Analytics</div>
+      <div class="bar"><div class="bar-fill" style="width: 80%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Email Marketing</div>
+      <div class="bar"><div class="bar-fill" style="width: 75%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Meta Ads (Facebook & Instagram)</div>
+      <div class="bar"><div class="bar-fill" style="width: 78%;"></div></div>
+    </div>
+  </div>
+</section>
+
+  </section>
+
+<section id="projects">
+ <h2>💼 Projects</h2>
+<div class="projects">
+    <div class="project">
+      <h3>SEO Optimization for MicrosIT Solutions</h3>
+      <p>Conducted comprehensive keyword research and implemented on-page SEO strategies, resulting in a 30% increase in organic traffic over three months.</p>
+    </div>
+    <div class="project">
+      <h3>Social Media Campaigns</h3>
+      <p>Developed and managed social media campaigns across platforms like Facebook and Instagram, leading to a 25% growth in follower engagement.</p>
+    </div>
+    <div class="project">
+      <h3>Email Marketing Initiatives</h3>
+      <p>Designed and executed email marketing campaigns using Mailchimp, achieving an average open rate of 20% and click-through rate of 5%.</p>
+    </div>
+    <div class="project">
+      <h3>Google Analytics Reporting</h3>
+      <p>Monitored website performance using Google Analytics, providing weekly reports and actionable insights to improve user experience and conversion rates.</p>
+    </div>
+  </div>
+</section>
+<section id="certifications">
+  <h2>🎓 Certifications</h2>
+  <h3>
+  <a href="https://drive.google.com/file/d/1-CgWD_4qquGfZ5kW8pkZW187SRRu6UYy/view?usp=share_link" target="_blank">
+    📜 Foundations of Digital Marketing and E-commerce (Coursera)
+  </a>
+</h3>
+
+
+  <h3>1. Foundations of Digital Marketing and E-commerce <span style="font-weight: normal;">(Coursera)</span></h3>
+  <ul>
+    <li>📧 <strong>Email Marketing</strong></li>
+    <li>📱 <strong>Mobile Marketing</strong></li>
+    <li>🔍 <strong>Search Engine Marketing (SEM) & SEO</strong></li>
+  </ul>
+
+  <h3>2. Introduction to Google SEO – Search Engine Optimization <span style="font-weight: normal;">(Coursera)</span></h3>
+  <ul>
+    <li>⚡ <strong>Website Speed Optimization</strong></li>
+    <li>🛠️ <strong>On-Page SEO Optimization</strong></li>
+    <li>🔗 <strong>Off-Page SEO Optimization</strong></li>
+  </ul>
+
+  <h3>3. Product and Brand Management <span style="font-weight: normal;">(NPTEL)</span></h3>
+  <ul>
+    <li>📦 <strong>Product Lifecycle Strategies</strong></li>
+    <li>🏷️ <strong>Brand Positioning & Management</strong></li>
+  </ul>
+</section>
+
+
+
+</section>
+<section id="experience">
+  <h2>💼 Work Experience</h2>
+  <h3>Digital Marketing Intern – <em>OHM EXPORTS</em></h3>
+  <p><strong>June 2024 – January 2025</strong></p>
+  <ul>
+    <li>📊 <strong>Developed & Executed Campaigns:</strong> Created successful marketing campaigns across social media, SEO, PPC, email, and content marketing, resulting in a 25% increase in website traffic and a 15% boost in conversions.</li>
+    <li>📱 <strong>Social Media Strategy:</strong> Led a targeted strategy that grew followers by 30% and engagement by 20%.</li>
+    <li>🔍 <strong>SEO Optimization:</strong> Enhanced website structure and content, leading to a 40% rise in organic search traffic.</li>
+    <li>💰 <strong>PPC Management:</strong> Optimized ads to reduce cost-per-click by 20% and increased CTR by 10%.</li>
+    <li>📧 <strong>Email Marketing:</strong> Designed engaging email campaigns, achieving 25% higher open rates and 15% better click-through rates.</li>
+  </ul>
+</section>
+
+<section id="hobbies">
+  <h2>🎯 Hobbies & Interests</h2>
+  <ul>
+    <li>🎮 <strong>Playing Video Games</strong> – I enjoy immersive and strategic gaming that sharpens focus and decision-making.</li>
+    <li>💡 <strong>Thinking Outside the Box</strong> – I love approaching challenges creatively and finding smart, unique solutions.</li>
+    <li>📘 <strong>Continuous Learning</strong> – I'm passionate about upgrading my skills and exploring new trends in digital marketing and tech.</li>
+  </ul>
+</section>
+<section id="achievements">
+  <h2>🏆 Achievements</h2>
+  <ul>
+    <li>🚀 <strong>Executed High-Impact Digital Campaigns:</strong> Led and launched successful digital marketing campaigns with measurable results.</li>
+    <li>📈 <strong>Boosted Website Metrics:</strong> Increased website traffic, engagement rates, and conversions through strategic planning and SEO.</li>
+    <li>💡 <strong>Mastered Multi-Channel Marketing:</strong> Demonstrated expertise across various platforms like SEO, social media, email marketing, and content creation.</li>
+    <li>🎯 <strong>Aligned with Business Goals:</strong> Contributed directly to company growth by aligning digital strategies with broader marketing objectives.</li>
+  </ul>
+</section>
+<section id="contact">
+  <h2>📞 Contact Me</h2>
+    <p>If you're interested in working together or want to say hello, feel free to drop a message!</p>
+   
+  <p>📱 <a href="https://wa.me/7355466659" target="_blank">WhatsApp Me</a></p>
+  <p>📞 <a href="tel:+919876543210">Call Me</a></p>
+  <p>📧 <a href="mailto:kapilsaini.dm@gmail.com">Email Me</a></p>
+</section>
+
+    
+  </section>
+  <p style="font-size: 18px;">💬 Feel free to reach out via <strong><a href="https://wa.me/919876543210" target="_blank">WhatsApp</a></strong> or <strong><a href="mailto:kapil@email.com">Email</a></strong> — I'm always open to new opportunities!</p>
+
+
+  <footer>
+    © 2025 KAPIL SAINI Developer | Built with ❤️ using only HTML & CSS
+  </footer>
+  <script>
+  function loadProfileImage(event) {
+    const image = document.getElementById('profilePreview');
+    image.src = URL.createObjectURL(event.target.files[0]);
+  }
+</script>
+
+
+</body>
+</html>
